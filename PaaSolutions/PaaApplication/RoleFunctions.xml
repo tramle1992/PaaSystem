@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<Data>
+	<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" id="Persons" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xs:element name="Data" msdata:IsDataSet="true">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="RoleFunctions">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Id" type="xs:unsignedInt" />
+								<xs:element name="ParentId" type="xs:unsignedInt" />
+								<xs:element name="Name" type="xs:string" />							
+								<xs:element name="IsActive" type="xs:boolean" />
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	</xs:schema>
+	<RoleFunctions>
+		<Id>1</Id>
+		<ParentId>0</ParentId>
+		<Name>Auto Document</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>2</Id>
+		<ParentId>0</ParentId>
+		<Name>Client Info</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>3</Id>
+		<ParentId>2</ParentId>
+		<Name>Add New Client</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>4</Id>
+		<ParentId>2</ParentId>
+		<Name>Delete Client</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>5</Id>
+		<ParentId>2</ParentId>
+		<Name>Change Client Name</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>6</Id>
+		<ParentId>2</ParentId>
+		<Name>Edit Special Price(s)</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>7</Id>
+		<ParentId>0</ParentId>
+		<Name>Explore Apps</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>8</Id>
+		<ParentId>7</ParentId>
+		<Name>Add/Edit Review Comment</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>9</Id>
+		<ParentId>7</ParentId>
+		<Name>Archive Apps</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>10</Id>
+		<ParentId>0</ParentId>
+		<Name>Info Resources</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>11</Id>
+		<ParentId>10</ParentId>
+		<Name>Delete Resource Item(s)</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>12</Id>
+		<ParentId>0</ParentId>
+		<Name>Invoicing</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>13</Id>
+		<ParentId>12</ParentId>
+		<Name>Receive Invoice Confirmation</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>14</Id>
+		<ParentId>0</ParentId>
+		<Name>User Manager</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>15</Id>
+		<ParentId>0</ParentId>
+		<Name>Report Type</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+	<RoleFunctions>
+		<Id>16</Id>
+		<ParentId>0</ParentId>
+		<Name>System Configuration</Name>
+		<IsActive>false</IsActive>		
+	</RoleFunctions>
+</Data>

@@ -1,0 +1,5 @@
+ALTER TABLE resource
+ADD phone varchar(20);
+
+ALTER TABLE resource
+ADD email varchar(255);

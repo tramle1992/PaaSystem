@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b9eb459f-2a05-4125-acba-cd87f07ea2f5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://sdkstage.microbilt.com/WebServices/Tu/TuStd.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TuStd.xsd" MetadataType="Schema" ID="11dcba13-9069-4d84-8507-63ac3500e7de" SourceId="1" SourceUrl="https://sdkstage.microbilt.com/WebServices/TU/TuStd.svc?xsd=xsd0" />
+    <MetadataFile FileName="TuStdWorkflow.wsdl" MetadataType="Wsdl" ID="c6aad7df-e0b5-453d-943b-26672dd0e3e6" SourceId="1" SourceUrl="https://sdkstage.microbilt.com/WebServices/Tu/TuStd.svc?wsdl" />
+    <MetadataFile FileName="TuStd.wsdl" MetadataType="Wsdl" ID="61821ffb-79c8-4983-956f-88c0e2c5a8f9" SourceId="1" SourceUrl="https://sdkstage.microbilt.com/WebServices/TU/TuStd.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TuStd1.xsd" MetadataType="Schema" ID="14143fe8-c0eb-4e96-87c6-0d29ca567213" SourceId="1" SourceUrl="https://sdkstage.microbilt.com/WebServices/TU/TuStd.svc?xsd=xsd2" />
+    <MetadataFile FileName="TuStd2.xsd" MetadataType="Schema" ID="a3dfc952-db1a-48e4-be81-b308aa95682b" SourceId="1" SourceUrl="https://sdkstage.microbilt.com/WebServices/TU/TuStd.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E81668D-0FF7-44E2-B73C-AD23B400E30A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|x86'">
+    <OutputPath>bin\x86\Staging\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|x86'">
+    <OutputPath>bin\x86\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper.Rainbow">
+      <HintPath>..\packages\Dapper.Rainbow.0.1.2\lib\net40\Dapper.Rainbow.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember">
+      <HintPath>..\packages\FastMember.1.0.0.11\lib\net40\FastMember.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Application\AutoMap\CopyContextMapping.cs" />
+    <Compile Include="Application\AutoMap\CoreContextMapping.cs" />
+    <Compile Include="Application\ClientGridDataQueryService.cs" />
+    <Compile Include="Application\ClientInfoApplicationService.cs" />
+    <Compile Include="Application\ClientInfoObjectConversionService.cs" />
+    <Compile Include="Application\ClientInfoQueryService.cs" />
+    <Compile Include="Application\Command\ClientInfo\SaveMultiClientCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\SaveWideMgtInfoCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\SaveCustomerNumberCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\NewClientCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\NewManagementCompanyCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\NewReportTypeCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\SaveClientCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\SaveManagementCompanyCommand.cs" />
+    <Compile Include="Application\Command\ClientInfo\SaveReportTypeCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\CheckDuplicateAppCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\GetAppByIdsCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\GetAppBySSNCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\InvCountAppByReceivedDateCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\InvGetAvailableApp.cs" />
+    <Compile Include="Application\Command\ExploreApps\InvSearchAppCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\MarkAsRoommatesCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\NewAppCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\SaveAppCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\SearchAppCommand.cs" />
+    <Compile Include="Application\Command\ExploreApps\SimpleSearchAppCommand.cs" />
+    <Compile Include="Application\Data\ClientInfo\ClientData.cs" />
+    <Compile Include="Application\Data\ClientInfo\ClientDisplayInfoData.cs" />
+    <Compile Include="Application\Data\ClientInfo\ClientGridData.cs" />
+    <Compile Include="Application\Data\ClientInfo\ClientReportSpecialPriceData.cs" />
+    <Compile Include="Application\Data\ClientInfo\ContactData.cs" />
+    <Compile Include="Application\Data\ClientInfo\ClientMailsDisplayInfoData.cs" />
+    <Compile Include="Application\Data\ClientInfo\MgtWideInfoUpdate.cs" />
+    <Compile Include="Application\Data\ClientInfo\CreditTypeData.cs" />
+    <Compile Include="Application\Data\ClientInfo\SearchClientCustomSQLData.cs" />
+    <Compile Include="Application\Data\ClientInfo\InvoiceDivisionData.cs" />
+    <Compile Include="Application\Data\ClientInfo\InvoiceLineData.cs" />
+    <Compile Include="Application\Data\ClientInfo\ManagementCompanyData.cs" />
+    <Compile Include="Application\Data\ClientInfo\OtherAddressData.cs" />
+    <Compile Include="Application\Data\ClientInfo\ReportTypeData.cs" />
+    <Compile Include="Application\Data\ClientInfo\SearchClientCustomData.cs" />
+    <Compile Include="Application\Common\ClientInfo\GetClientData.cs" />
+    <Compile Include="Application\Data\ClientInfo\SearchClientSpecialBillingData.cs" />
+    <Compile Include="Application\Data\CreditReports\CreditReportData.cs" />
+    <Compile Include="Application\Data\ExploreApps\AppData.cs" />
+    <Compile Include="Application\Data\ExploreApps\ChargeRefData.cs" />
+    <Compile Include="Application\Data\ExploreApps\ContactAttemptData.cs" />
+    <Compile Include="Application\Data\ExploreApps\ContactAttemptTypeData.cs" />
+    <Compile Include="Application\Data\ExploreApps\CreditInfoData.cs" />
+    <Compile Include="Application\Data\ExploreApps\CreditRefData.cs" />
+    <Compile Include="Application\Data\ExploreApps\DragDropData.cs" />
+    <Compile Include="Application\Data\ExploreApps\DuplicateAppData.cs" />
+    <Compile Include="Application\Data\ExploreApps\EmpRefData.cs" />
+    <Compile Include="Application\Data\ExploreApps\EmpVerData.cs" />
+    <Compile Include="Application\Data\ExploreApps\EvictionRefData.cs" />
+    <Compile Include="Application\Data\ExploreApps\LocationData.cs" />
+    <Compile Include="Application\Data\ExploreApps\PriorityAppData.cs" />
+    <Compile Include="Application\Data\ExploreApps\ReferenceItem.cs" />
+    <Compile Include="Application\Data\ExploreApps\RentalRefData.cs" />
+    <Compile Include="Application\Data\ExploreApps\RentalRefInfoData.cs" />
+    <Compile Include="Application\Data\ExploreApps\ScreenerData.cs" />
+    <Compile Include="Application\Data\ExploreApps\SearchKeywordOptionData.cs" />
+    <Compile Include="Application\Data\ExploreApps\InvSearchAppData.cs" />
+    <Compile Include="Application\Data\ExploreApps\SimpleSearchAppData.cs" />
+    <Compile Include="Application\ExploreAppsApplicationService.cs" />
+    <Compile Include="Application\ExploreAppsQueryService.cs" />
+    <Compile Include="Application\Helper\Utils.cs" />
+    <Compile Include="Domain.Model\ClientInfo\Client.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ClientId.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ClientReceive.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ClientReportSpecialPrice.cs" />
+    <Compile Include="Domain.Model\ClientInfo\Contact.cs" />
+    <Compile Include="Domain.Model\ClientInfo\CustomerNumberLetterId.cs" />
+    <Compile Include="Domain.Model\ClientInfo\CustomerNumberSetting.cs" />
+    <Compile Include="Domain.Model\ClientInfo\CreditType.cs" />
+    <Compile Include="Domain.Model\ClientInfo\InvoiceDivision.cs" />
+    <Compile Include="Domain.Model\ClientInfo\InvoiceLine.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ManagementCompany.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ManagementCompanyId.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ManagementWideInfoUpdates.cs" />
+    <Compile Include="Domain.Model\ClientInfo\OtherAddress.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ReportType.cs" />
+    <Compile Include="Domain.Model\ClientInfo\ReportTypeId.cs" />
+    <Compile Include="Domain.Model\ClientInfo\WebInfo.cs" />
+    <Compile Include="Domain.Model\ExploreApps\App.cs" />
+    <Compile Include="Domain.Model\ExploreApps\AppId.cs" />
+    <Compile Include="Domain.Model\ExploreApps\ChargeRef.cs" />
+    <Compile Include="Domain.Model\ExploreApps\ContactAttempt.cs" />
+    <Compile Include="Domain.Model\ExploreApps\ContactAttemptType.cs" />
+    <Compile Include="Domain.Model\ExploreApps\CreditInfo.cs" />
+    <Compile Include="Domain.Model\ExploreApps\CreditRef.cs" />
+    <Compile Include="Domain.Model\ExploreApps\EmpRef.cs" />
+    <Compile Include="Domain.Model\ExploreApps\EmpVer.cs" />
+    <Compile Include="Domain.Model\ExploreApps\EvictionRef.cs" />
+    <Compile Include="Domain.Model\ExploreApps\Location.cs" />
+    <Compile Include="Domain.Model\ExploreApps\PriorityApp.cs" />
+    <Compile Include="Domain.Model\ExploreApps\RecommendationFactInfo.cs" />
+    <Compile Include="Application\Data\ExploreApps\RecommendationFactInfoData.cs" />
+    <Compile Include="Domain.Model\ExploreApps\RentalRef.cs" />
+    <Compile Include="Domain.Model\ExploreApps\RentalRefFactInfo.cs" />
+    <Compile Include="Domain.Model\ExploreApps\ReviewComment.cs" />
+    <Compile Include="Domain.Model\ExploreApps\Screener.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ClientCachedApiQuery.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ClientApiRepository.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ClientRepository.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ManagementCompanyApiRepository.cs" />
+    <Compile Include="Infrastructure\ClientInfo\MgmWideInfoCachedApiQuery.cs" />
+    <Compile Include="Infrastructure\ClientInfo\MgmWideInfoApiRepository.cs" />
+    <Compile Include="Infrastructure\ClientInfo\CustomerNumberRespository.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ManagementCompanyCachedApiQuery.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ManagementCompanyRepository.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ReportTypeApiRepository.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ReportTypeCachedApiQuery.cs" />
+    <Compile Include="Infrastructure\ClientInfo\ReportTypeRepository.cs" />
+    <Compile Include="Infrastructure\ExploreApps\AppApiRepository.cs" />
+    <Compile Include="Infrastructure\ExploreApps\AppCachedApiQuery.cs" />
+    <Compile Include="Infrastructure\ExploreApps\AppRepository.cs" />
+    <Compile Include="Infrastructure\ExploreApps\ReviewCommentApiRepository.cs" />
+    <Compile Include="Infrastructure\ExploreApps\ReviewCommentRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{82115346-c759-4da2-a4ba-5be4387c0fa8}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentityAccess\IdentityAccess.csproj">
+      <Project>{c1c0a0f3-ddc1-4d36-b4b9-68165331b8a2}</Project>
+      <Name>IdentityAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

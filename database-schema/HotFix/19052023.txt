@@ -1,0 +1,3 @@
+ALTER TABLE Client ALTER COLUMN default_deliver_reports_to NVARCHAR (512)
+ALTER TABLE Client ALTER COLUMN default_deliver_confirmation_to NVARCHAR (512)
+ALTER TABLE Client ALTER COLUMN default_deliver_invoices_to NVARCHAR (512)

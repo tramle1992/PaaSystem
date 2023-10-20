@@ -1,0 +1,2 @@
+ALTER TABLE application
+Add pdx_ind varchar(1);

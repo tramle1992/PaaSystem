@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{82115346-C759-4DA2-A4BA-5BE4387C0FA8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|x86'">
+    <OutputPath>bin\x86\Staging\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|x86'">
+    <OutputPath>bin\x86\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsvHelper">
+      <HintPath>..\packages\CsvHelper.2.13.2.0\lib\net40-client\CsvHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper.Rainbow">
+      <HintPath>..\packages\Dapper.Rainbow.0.1.2\lib\net40\Dapper.Rainbow.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenXMLSDK-MOT.2.6.0.0\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NetOffice, Version=1.7.3.0, Culture=neutral, PublicKeyToken=acf636d62c39f8f5, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOffice.Core.1.7.3.0\lib\net45\NetOffice.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime">
+      <HintPath>..\packages\NodaTime.1.3.1\lib\net35-Client\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="ObjectListView, Version=2.8.1.33936, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.Official.2.8.1\lib\net20\ObjectListView.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OfficeApi, Version=1.7.3.0, Culture=neutral, PublicKeyToken=7c1c3e9d16cace88, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOffice.Core.1.7.3.0\lib\net45\OfficeApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OutlookApi, Version=1.7.3.0, Culture=neutral, PublicKeyToken=865d86a9c321c488, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOffice.Outlook.1.7.3.0\lib\net45\OutlookApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Packaging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenXMLSDK-MOT.2.6.0.0\lib\System.IO.Packaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TemplateEngine.Docx, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TemplateEngine.Docx.1.1.2\lib\TemplateEngine.Docx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="VBIDEApi, Version=1.7.3.0, Culture=neutral, PublicKeyToken=a3637beacf571e8a, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOffice.Core.1.7.3.0\lib\net45\VBIDEApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WordApi, Version=1.7.3.0, Culture=neutral, PublicKeyToken=dd9255e6bcd130c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOffice.Word.1.7.3.0\lib\net45\WordApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Application\DialogMessage\DialogMessageFactory.cs" />
+    <Compile Include="Application\DialogMessage\DialogMessageType.cs" />
+    <Compile Include="Application\GlobalConstants.cs" />
+    <Compile Include="Application\Helper\DateTimeHelper.cs" />
+    <Compile Include="Domain.Model\AssertionConcern.cs" />
+    <Compile Include="Domain.Model\DomainEventPublisher.cs" />
+    <Compile Include="Domain.Model\Entity.cs" />
+    <Compile Include="Domain.Model\EventSourcedRootEntity.cs" />
+    <Compile Include="Domain.Model\HashCodeHelper.cs" />
+    <Compile Include="Domain.Model\IAggregateRoot.cs" />
+    <Compile Include="Domain.Model\Identity.cs" />
+    <Compile Include="Domain.Model\IDomainEvent.cs" />
+    <Compile Include="Domain.Model\IDomainEventSubscriber.cs" />
+    <Compile Include="Domain.Model\IIdentity.cs" />
+    <Compile Include="Domain.Model\Enumeration.cs" />
+    <Compile Include="Domain.Model\ValueObject.cs" />
+    <Compile Include="Infrastructure\ApiClient\ApiClientFactory.cs" />
+    <Compile Include="Infrastructure\ApiClient\JsonGetApiClient.cs" />
+    <Compile Include="Infrastructure\ApiClient\JsonPostApiClient.cs" />
+    <Compile Include="Infrastructure\AppEnvironment\AppEnvironment.cs" />
+    <Compile Include="Infrastructure\Cache\TypedObjectCache.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Affix\AffixEntry.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Affix\AffixEntryCollection.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Affix\AffixEntryEnumerator.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Affix\AffixRule.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Affix\AffixRuleCollection.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Affix\AffixRuleEnumerator.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Affix\AffixUtility.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Phonetic\PhoneticRule.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Phonetic\PhoneticRuleCollection.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Phonetic\PhoneticRuleEnumerator.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Phonetic\PhoneticUtility.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\Word.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Dictionary\WordDictionary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\CheckSpelling\Forms\OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\CheckSpelling\Forms\OptionForm.Designer.cs">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\CheckSpelling\ReplaceWordEventArgs.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Spelling.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\CheckSpelling\SpellingEventArgs.cs" />
+    <Compile Include="Infrastructure\CheckSpelling\Forms\SuggestionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\CheckSpelling\Forms\SuggestionForm.Designer.cs">
+      <DependentUpon>SuggestionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\ComboBoxCustom\ComboBoxService.cs" />
+    <Compile Include="Infrastructure\Csv\CsvService.cs" />
+    <Compile Include="Infrastructure\Encryption\IEncryptionService.cs" />
+    <Compile Include="Infrastructure\Encryption\MD5EncryptionService.cs" />
+    <Compile Include="Infrastructure\Ftp\FTPService.cs" />
+    <Compile Include="Infrastructure\Helper\FileNameHelper.cs" />
+    <Compile Include="Infrastructure\Helper\XmlSerializationHelper.cs" />
+    <Compile Include="Infrastructure\Logging\ILogger.cs" />
+    <Compile Include="Infrastructure\Logging\Log4NetLogger.cs" />
+    <Compile Include="Application\DialogMessage\DialogMessage.cs" />
+    <Compile Include="Infrastructure\ObjectListView\ClientDataListFilter.cs" />
+    <Compile Include="Infrastructure\ObjectListView\ObjectListViewService.cs" />
+    <Compile Include="Infrastructure\ObjectListView\OLVColumnFormat.cs" />
+    <Compile Include="Infrastructure\Office\OutlookService.cs" />
+    <Compile Include="Infrastructure\Office\WordMLService.cs" />
+    <Compile Include="Infrastructure\Office\WordService.cs" />
+    <Compile Include="Infrastructure\Query\AbstractQueryService.cs" />
+    <Compile Include="Infrastructure\Query\JoinOn.cs" />
+    <Compile Include="Infrastructure\Query\Query.cs" />
+    <Compile Include="Infrastructure\Query\QueryService.cs" />
+    <Compile Include="Infrastructure\Query\ResultSetObjectMapper.cs" />
+    <Compile Include="Infrastructure\Repository\ApiRepository.cs" />
+    <Compile Include="Infrastructure\Repository\Repository.cs" />
+    <Compile Include="Infrastructure\UI\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Infrastructure\UI\HourGlass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Infrastructure\CheckSpelling\Forms\OptionForm.resx">
+      <DependentUpon>OptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Infrastructure\CheckSpelling\Forms\SuggestionForm.resx">
+      <DependentUpon>SuggestionForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

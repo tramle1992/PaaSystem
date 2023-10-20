@@ -1,0 +1,1 @@
+curl http://server:8686/api/invoices/schedule/updatestatus/daily
