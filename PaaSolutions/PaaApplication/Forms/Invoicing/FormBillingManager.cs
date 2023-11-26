@@ -1455,7 +1455,7 @@ namespace PaaApplication.Forms.Invoicing
                             if (client != null && !string.IsNullOrEmpty(client.DefaultDeliverInvoicesTo) &&
                                 Utils.ValidEmailAddresses(client.DefaultDeliverInvoicesTo))
                             {
-                                outlook = new OutlookService(emailSubject, defaultEmailTo, string.Empty, this.EmailBody, invoicePath);
+                                outlook = new OutlookService(emailSubject, defaultEmailTo, string.Empty, this.EmailBody, invoicePath, false);
                                 outlook.Send();
                                 InvoiceCalculationHelper.UpdateInvoiceActionStatus(invoice, ActionStatus.EMAILED);
                                 if (!emailedList.ContainsKey(invoice.InvoiceId))

@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Outlook = NetOffice.OutlookApi;
 using Word = NetOffice.WordApi;
+using MailMessage = System.Net.Mail.MailMessage;
 
 namespace Common.Infrastructure.Office
 {
@@ -22,68 +25,116 @@ namespace Common.Infrastructure.Office
         //private Outlook.ApplicationClass oApplicationClass;
         private Outlook.MailItem oMailItem;
         private Outlook.Inspector oInspector;
+        private MailMessage mailMessage;
 
         public event EventHandler OnOutlookClose;
 
-        public OutlookService()
+        public OutlookService(bool isCreatedMailItem = true)
         {
-            oApplication = new Outlook.Application();
-            oMailItem = (Outlook.MailItem)oApplication.CreateItem(OlItemType.olMailItem);
-            oInspector = (Outlook.Inspector)oMailItem.GetInspector;
+            if (isCreatedMailItem)
+            {
+                oApplication = new Outlook.Application();
+                oMailItem = (Outlook.MailItem)oApplication.CreateItem(OlItemType.olMailItem);
+                oInspector = (Outlook.Inspector)oMailItem.GetInspector;
 
-            // Init events
-            InitEventHandler();
+                // Init events
+                InitEventHandler();
+            }
+            else
+            {
+                mailMessage = new MailMessage();
+            }
         }
 
-        public OutlookService(string subject, string to, string cc, string body, string filePath)
+        public OutlookService(string subject, string to, string cc, string body, string filePath, bool isCreatedMailItem = true)
         {
             this.subject = subject;
             this.to = to;
             this.cc = cc;
             this.filePath = filePath;
 
-            oApplication = new Outlook.Application();
-            oMailItem = (Outlook.MailItem)oApplication.CreateItem(OlItemType.olMailItem);
-            oInspector = (Outlook.Inspector)oMailItem.GetInspector;
-            oMailItem.Subject = subject;
-            oMailItem.To = to;
-            oMailItem.CC = cc;
-            oMailItem.Attachments.Add(filePath, oMissing, oMissing, oMissing);
-            oMailItem.BodyFormat = OlBodyFormat.olFormatHTML;
-            oMailItem.HTMLBody = body;
+            if (isCreatedMailItem)
+            {
+                oApplication = new Outlook.Application();
+                oMailItem = (Outlook.MailItem)oApplication.CreateItem(OlItemType.olMailItem);
+                oInspector = (Outlook.Inspector)oMailItem.GetInspector;
+                oMailItem.Subject = subject;
+                oMailItem.To = to;
+                oMailItem.CC = cc;
+                oMailItem.Attachments.Add(filePath, oMissing, oMissing, oMissing);
+                oMailItem.BodyFormat = OlBodyFormat.olFormatHTML;
+                oMailItem.HTMLBody = body;
 
-            // Init events
-            InitEventHandler();
+                // Init events
+                InitEventHandler();
+            }
+            else 
+            { 
+                mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress("q7891@outlook.com.vn");
+                mailMessage.Subject = subject;
+                mailMessage.To.Add(to);
+                if (!string.IsNullOrEmpty(cc)) mailMessage.CC.Add(cc);
+                var attachment = new Attachment(filePath);
+                mailMessage.Attachments.Add(attachment);
+                mailMessage.Body = body;
+                mailMessage.IsBodyHtml = true;
+            }
         }
 
-        public OutlookService(string subject, string to, string cc, string body, List<string> attachments)
+        public OutlookService(string subject, string to, string cc, string body, List<string> attachments, bool isCreatedMailItem = true)
         {
             this.subject = subject;
             this.to = to;
             this.cc = cc;
             this.filePath = string.Empty;
 
-            oApplication = new Outlook.Application();
-            oMailItem = (Outlook.MailItem)oApplication.CreateItem(OlItemType.olMailItem);
-            oInspector = (Outlook.Inspector)oMailItem.GetInspector;
-            oMailItem.Subject = subject;
-            oMailItem.To = to;
-            oMailItem.CC = cc;
-            oMailItem.BodyFormat = OlBodyFormat.olFormatHTML;
-            oMailItem.HTMLBody = body;
-            try
+            if (isCreatedMailItem)
             {
-                foreach (var filePath in attachments)
+                oApplication = new Outlook.Application();
+                oMailItem = (Outlook.MailItem)oApplication.CreateItem(OlItemType.olMailItem);
+                oInspector = (Outlook.Inspector)oMailItem.GetInspector;
+                oMailItem.Subject = subject;
+                oMailItem.To = to;
+                oMailItem.CC = cc;
+                oMailItem.BodyFormat = OlBodyFormat.olFormatHTML;
+                oMailItem.HTMLBody = body;
+                try
                 {
-                    oMailItem.Attachments.Add(filePath, oMissing, oMissing, oMissing);
+                    foreach (var filePath in attachments)
+                    {
+                        oMailItem.Attachments.Add(filePath, oMissing, oMissing, oMissing);
+                    }
+                }
+                catch (System.Runtime.InteropServices.COMException ex)
+                {
+                    throw new WarningException("Please use PDF format instead. The attachment size exceeds the allowable limit!");
+                }
+
+                InitEventHandler();
+            }
+            else
+            {
+                mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress("q7891@outlook.com.vn");
+                mailMessage.Subject = subject;
+                mailMessage.To.Add(to);
+                if (!string.IsNullOrEmpty(cc)) mailMessage.CC.Add(cc);
+                mailMessage.Body = body;
+                mailMessage.IsBodyHtml = true;
+                try
+                {
+                    foreach (var filePath in attachments)
+                    {
+                        var attachment = new Attachment(filePath);
+                        mailMessage.Attachments.Add(attachment);
+                    }
+                }
+                catch (System.Runtime.InteropServices.COMException ex)
+                {
+                    throw new WarningException("Please use PDF format instead. The attachment size exceeds the allowable limit!");
                 }
             }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                throw new WarningException("Please use PDF format instead. The attachment size exceeds the allowable limit!");
-            }
-            
-            InitEventHandler();
         }
 
         private void InitEventHandler()
@@ -257,7 +308,19 @@ namespace Common.Infrastructure.Office
         {
             try
             {
-                oMailItem.Send();
+                // Config smtp
+                SmtpClient smtpClient = new SmtpClient();
+                smtpClient.Host = "smtp-mail.outlook.com";
+                smtpClient.Port = 587;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential("q7891@outlook.com.vn", "kpcvpdklrxebgrpu");
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.EnableSsl = true;
+
+                // Perform send
+                smtpClient.Send(mailMessage);
+
+                //MessageBox.Show("The email has sent");
             }
             catch (System.Runtime.InteropServices.COMException ex)
             {

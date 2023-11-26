@@ -109,7 +109,11 @@ namespace PaaApplication.Models.Common
                     {
                         workingFilePath = GetWordWorkingFilePath();
                     }
-                    outlook = new OutlookService(emailSubject, emailTo, string.Empty, this.EmailBody, workingFilePath);
+
+                    // Dispose file to avoid File is being used error
+                    this.word.Quit();
+
+                    outlook = new OutlookService(emailSubject, emailTo, string.Empty, this.EmailBody, workingFilePath, false);
                     if (outlook != null)
                     {
                         outlook.OnOutlookClose += OnOutlookCloseHandler;
